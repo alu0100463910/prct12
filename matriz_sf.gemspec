@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Fabio Mendoza Bello & Sebastian Ospina Berrio"]
   spec.email         = ["alu0100463910@ull.edu.es"]
   spec.description   = %q{Desarrollada por Fabio Mendoza y Sebastian Ospina}
-  spec.summary       = %q{Practica 10 de LPP}
+  spec.summary       = %q{Practica 12 de LPP}
   spec.homepage      = ""
   spec.license       = "MIT"
 
