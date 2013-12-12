@@ -1,3 +1,4 @@
+require matriz_sf.rb
 class MatrixDSL < Matrix
 	#Se le pasa el tipo de operando que se va quiere usar
 	def initialize (op)
