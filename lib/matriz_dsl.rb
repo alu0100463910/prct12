@@ -1,11 +1,13 @@
 class MatrixDSL < Matrix
-	def initialize(op)
-		case op.to_s
+	#Se le pasa el tipo de operando que se va quiere usar
+	def initialize (op)
+		@op = op.to_s
+		case op
 			when "suma"
-				@operando= "+"
+				@operando = "+"
 			when "resta"
 				@operando = "-"
-			when "multiplica"
+			when "multiplicacion"
 				@operando = "*"
 			else
 				puts "Operando desconocido"
@@ -15,17 +17,33 @@ class MatrixDSL < Matrix
 	end
 	
 	#Definir  tipo de matriz dispersa o densa
-	def option(op)
-		
+	def option (opcion)
+		@tipo = opcion
 	end
 
         # Se definen todos las operaciones con matrices
-        def operand(other) 
+        def operand (o)
+		if @matriz1 == nil
+			@matriz1 == o
+		else
+			@matriz2 == o
+		end
+		execute
         end
                 
-        # Funcion ejecucion del DSL
+        # Funcion de ejecucion del DSL
         def execute
-		#falta
-                        
+		
+		if @matriz1 != nil and @matriz2 != nil
+			
+			@m1 = "Matriz " + @tipo.to_s + ".new(@matriz1)"
+			puts "Matriz 1: #{@m1}"
+		 	@m2 = "Matriz" + @tipo.to_s + ".new(@matriz2)"
+                        puts "Matriz 2: #{@m2}"
+
+                        resultado = @m1.to_s + "." + @operando.to_s + "(" + " " + @m2.to_s + ")"
+                        resultado = eval(resultado)
+                        puts "Resultado de la operacion ( " + @op.to_s + " ): #{resultado}"
+		             
         end
 end
