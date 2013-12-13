@@ -1,10 +1,10 @@
-# encoding UTF-8
-require 'matriz_sf.rb'
+require "matriz_sf.rb"
+
 class MatrixDSL < Matrix
 	#Se le pasa el tipo de operando que se va quiere usar
 	def initialize (op)
 		@op = op.to_s
-		case op
+		case @op
 			when "suma"
 				@operando = "+"
 			when "resta"
@@ -37,7 +37,7 @@ class MatrixDSL < Matrix
         def execute
 		
 		if @matriz1 != nil and @matriz2 != nil
-		
+			
 			@m1 = "Matriz " + @tipo.to_s + ".new(@matriz1)"
 			puts "Matriz 1: #{@m1}"
 		 	@m2 = "Matriz" + @tipo.to_s + ".new(@matriz2)"
@@ -46,6 +46,7 @@ class MatrixDSL < Matrix
                         resultado = @m1.to_s + "." + @operando.to_s + "(" + " " + @m2.to_s + ")"
                         resultado = eval(resultado)
                         puts "Resultado de la operacion ( " + @op.to_s + " ): #{resultado}"
-                 end            
+		end
+		             
         end
 end
