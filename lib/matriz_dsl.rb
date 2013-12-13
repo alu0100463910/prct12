@@ -42,10 +42,9 @@ class MatrixDSL < Matrix
 			puts "Matriz 1: #{@m1}"
 		 	@m2 = "Matriz" + @tipo.to_s + ".new(@matriz2)"
                         puts "Matriz 2: #{@m2}"
-
-                        resultado = @m1.to_s + "." + @operando.to_s + "(" + " " + @m2.to_s + ")"
-                        resultado = eval(resultado)
-                        puts "Resultado de la operacion ( " + @op.to_s + " ): #{resultado}"
+                        r = @m1.to_s + "." + @operando.to_s + "(" + " " + @m2.to_s + ")"
+                        r = eval(r)
+                        puts @m1.to_s +" " + @op.to_s + " "+ @m2.to_s + "=    #{r}"
 		end
 		             
         end
