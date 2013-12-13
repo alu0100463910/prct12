@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 require "matriz_sf.rb"
 
 class MatrixDSL < Matrix
@@ -37,7 +38,6 @@ class MatrixDSL < Matrix
         def execute
 		
 		if @matriz1 != nil and @matriz2 != nil
-			
 			@m1 = "Matriz " + @tipo.to_s + ".new(@matriz1)"
 			puts "Matriz 1: #{@m1}"
 		 	@m2 = "Matriz" + @tipo.to_s + ".new(@matriz2)"
